@@ -1,12 +1,14 @@
 services:
-  cat-weight-tracker: # Define a service named 'cat-weight-tracker'
-    build: . # Build the Docker image using the Dockerfile in the current directory
+  cat-weight-tracker:
+    container_name: cat-weight-tracker
+    build: .
+    restart: unless-stopped
     ports:
-      - "8034:80" # Map port 8080 on your host to port 80 in the container
-                 # You can change 8080 to any available port on your machine
+      - '8034:80'
     volumes:
-      - data:/var/www/html/data # Mount a local 'data' directory to the container's '/var/www/html/data'
-                                  # This will persist your SQLite database file even if the container is removed
+      - data:/var/www/html/data
+
 volumes:
   data:
     name: catweight
+networks: {}

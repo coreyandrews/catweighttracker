@@ -177,7 +177,7 @@ foreach ($catWeightMap as $catName => $data) {
         $datasetData[] = $data[$date] ?? null;
     }
     $chartDatasets[] = [
-        'label' => htmlspecialchars($catName) . ' Weight (kg)',
+        'label' => htmlspecialchars($catName) . ' Weight (lbs)',
         'data' => $datasetData,
         'borderColor' => $colors[$colorIndex % count($colors)],
         'tension' => 0.1,
@@ -256,7 +256,7 @@ foreach ($catWeightMap as $catName => $data) {
                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
                 </div>
                 <div>
-                    <label for="weight" class="block text-sm font-medium text-gray-700">Weight (kg)</label>
+                    <label for="weight" class="block text-sm font-medium text-gray-700">Weight (lbs)</label>
                     <input type="number" step="0.01" id="weight" name="weight" required
                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
                 </div>
@@ -339,7 +339,7 @@ foreach ($catWeightMap as $catName => $data) {
                                     Cat Name
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Weight (kg)
+                                    Weight (lbs)
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Date
@@ -453,7 +453,7 @@ foreach ($catWeightMap as $catName => $data) {
                         beginAtZero: false,
                         title: {
                             display: true,
-                            text: 'Weight (kg)'
+                            text: 'Weight (lbs)'
                         }
                     }
                 }
